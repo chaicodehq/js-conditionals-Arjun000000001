@@ -22,4 +22,38 @@
  */
 export function getWeatherAdvice(temperature, isRaining) {
   // Your code here
+   let message="";
+  
+   if(temperature<5)
+   {
+      message=message+"Too cold - stay warm indoors";
+   }
+   else if(temperature>=5 && isRaining && temperature<15)
+   {
+      message=message+"Cold and wet - best to stay indoors";
+   }
+   else if(temperature>=5 && !isRaining && temperature<15)
+   {
+       message=message+"Chilly - wear layers for your hike";
+   }
+   else if(temperature>=15 && isRaining && temperature<25 )
+   {
+       message=message+"Cool and rainy - bring waterproof gear if hiking";
+   }
+   else if(temperature>=15 && !isRaining && temperature<25)
+   {
+        message=message+"Perfect hiking weather - enjoy the trails";
+   }
+   else if(temperature>=25 &&isRaining && temperature<35)
+   {
+      message=message+"Warm but rainy - consider indoor activities";
+   }
+   else if(temperature>=25 &&!isRaining && temperature<35)
+   {
+      message=message+"Great weather for hiking - don't forget sunscreen";
+   }
+   else{
+       message=message+"Too hot for hiking - stay indoors and hydrate";
+   }
+   return message;
 }
